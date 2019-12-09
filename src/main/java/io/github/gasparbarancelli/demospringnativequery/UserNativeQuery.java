@@ -4,6 +4,7 @@ import io.github.gasparbarancelli.NativeQuery;
 import io.github.gasparbarancelli.NativeQueryParam;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -20,7 +21,12 @@ public interface UserNativeQuery extends NativeQuery {
     Add pagination
   */
   List<UserTO> findActiveUsers(Pageable pageable);
-  
+
+  /*
+    Ordering
+   */
+  List<UserTO> findActiveUsersWithSort(Sort sort);
+
   /*
     Add pagination and return object with values for the pagination (count, page, size)
   */

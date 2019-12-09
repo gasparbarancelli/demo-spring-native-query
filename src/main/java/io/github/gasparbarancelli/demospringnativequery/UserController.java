@@ -3,6 +3,7 @@ package io.github.gasparbarancelli.demospringnativequery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,13 @@ public class UserController {
           @RequestParam(value = "size", defaultValue = "5", required = false) int size) {
     return userNativeQuery.findActiveUsersWithPage(PageRequest.of(page, size));
   }
-  
+
+  @GetMapping("activeWithSort")
+  public List<UserTO> findActiveUsersWithSort(
+          @RequestParam(value = "columnName") String columnName) {
+    return userNativeQuery.findActiveUsersWithSort(Sort.by(columnName));
+  }
+
   @GetMapping("{id}")
   public UserTO findUsers(@PathVariable("id") Number id) {
     return userNativeQuery.findUserById(id);

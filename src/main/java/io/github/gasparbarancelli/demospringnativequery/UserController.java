@@ -6,7 +6,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("user")
@@ -17,6 +19,14 @@ public class UserController {
   @GetMapping()
   public List<UserTO> findUsers() {
     return userNativeQuery.findUsers();
+  }
+
+  @GetMapping("map")
+  public List<UserTO> findWithMap() {
+    Map<String, Object> map = new HashMap<>();
+    map.put("cod", 1);
+    map.put("full_name", "Gaspar");
+    return userNativeQuery.findWithMap(map);
   }
   
   @PostMapping("filter")

@@ -7,10 +7,13 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserNativeQuery extends NativeQuery {
 
   List<UserTO> findUsers();
+
+  List<UserTO> findWithMap(Map<String, Object> params);
   
   /*
     Add fields children of parameter

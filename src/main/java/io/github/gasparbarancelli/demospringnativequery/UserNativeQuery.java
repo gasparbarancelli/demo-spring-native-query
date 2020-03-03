@@ -2,6 +2,7 @@ package io.github.gasparbarancelli.demospringnativequery;
 
 import io.github.gasparbarancelli.NativeQuery;
 import io.github.gasparbarancelli.NativeQueryParam;
+import io.github.gasparbarancelli.NativeQuerySql;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,6 +13,9 @@ import java.util.Map;
 public interface UserNativeQuery extends NativeQuery {
 
   List<UserTO> findUsers();
+
+  @NativeQuerySql("SELECT cod as \"id\", full_name as \"name\" FROM USER")
+  List<UserTO> findBySqlInline();
 
   List<UserTO> findWithMap(Map<String, Object> params);
   

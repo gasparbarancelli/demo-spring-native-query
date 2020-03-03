@@ -21,6 +21,11 @@ public class UserController {
     return userNativeQuery.findUsers();
   }
 
+  @GetMapping("inline")
+  public List<UserTO> findBySqlInline() {
+    return userNativeQuery.findBySqlInline();
+  }
+
   @GetMapping("map")
   public List<UserTO> findWithMap() {
     Map<String, Object> map = new HashMap<>();

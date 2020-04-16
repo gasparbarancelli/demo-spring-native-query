@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>io.github.gasparbarancelli</groupId>
 			<artifactId>spring-native-query</artifactId>
-			<version>1.0.22</version>
+			<version>1.0.23</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>

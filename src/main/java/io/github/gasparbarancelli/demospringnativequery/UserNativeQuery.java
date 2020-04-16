@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface UserNativeQuery extends NativeQuery {
 
@@ -47,5 +48,9 @@ public interface UserNativeQuery extends NativeQuery {
   List<Number> getUsersId();
   
   String getUserName(Number id);
+
+  Optional<String> getOptionalUserName(Number id);
+
+  Optional<UserTO> findOptionalUserById(@NativeQueryParam(value = "codigo") Number id);
   
 }

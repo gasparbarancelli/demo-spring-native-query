@@ -1,0 +1,1 @@
+SELECT full_name as "name" FROM USER WHERE cod = :id

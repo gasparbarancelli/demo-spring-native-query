@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("user")
@@ -60,7 +61,7 @@ public class UserController {
   }
 
   @GetMapping("{id}")
-  public UserTO findUsers(@PathVariable("id") Number id) {
+  public UserTO findUser(@PathVariable("id") Number id) {
     return userNativeQuery.findUserById(id);
   }
   
@@ -72,6 +73,16 @@ public class UserController {
   @GetMapping("{id}/name")
   public String getUserName(@PathVariable("id") Number id) {
     return userNativeQuery.getUserName(id);
+  }
+
+  @GetMapping("{id}/optional/name")
+  public Optional<String> getOptionalUserName(@PathVariable("id") Number id) {
+    return userNativeQuery.getOptionalUserName(id);
+  }
+
+  @GetMapping("{id}/optional")
+  public Optional<UserTO> findOptionalUser(@PathVariable("id") Number id) {
+    return userNativeQuery.findOptionalUserById(id);
   }
 
 }

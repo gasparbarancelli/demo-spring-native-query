@@ -14,4 +14,8 @@ public class NativeQueryDefaultConfig implements NativeQueryConfig {
         return "sql";
     }
 
+    @Override
+    public String getSQLDirectory() {
+        return "sql/";
+    }
 }

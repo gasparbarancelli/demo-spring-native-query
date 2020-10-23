@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.5.RELEASE</version>
+		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.github.gasparbarancelli</groupId>
@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>12</java.version>
+		<lombok.version>1.18.14</lombok.version>
 	</properties>
 
 	<dependencies>
@@ -44,7 +45,7 @@
 		<dependency>
 			<groupId>io.github.gasparbarancelli</groupId>
 			<artifactId>spring-native-query</artifactId>
-			<version>1.0.23</version>
+			<version>1.0.28</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>

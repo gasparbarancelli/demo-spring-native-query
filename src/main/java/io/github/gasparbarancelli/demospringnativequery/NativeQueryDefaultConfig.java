@@ -18,4 +18,9 @@ public class NativeQueryDefaultConfig implements NativeQueryConfig {
     public String getSQLDirectory() {
         return "sql/";
     }
+
+    @Override
+    public boolean getUseHibernateTypes() {
+        return false;
+    }
 }

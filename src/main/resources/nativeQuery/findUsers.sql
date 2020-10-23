@@ -1,1 +1,1 @@
-SELECT cod as "id", full_name as "name" FROM USER
+SELECT cod as "id", height as "height", full_name as "name" FROM USER

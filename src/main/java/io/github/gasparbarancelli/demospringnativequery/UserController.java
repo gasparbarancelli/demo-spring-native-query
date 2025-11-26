@@ -1,6 +1,5 @@
 package io.github.gasparbarancelli.demospringnativequery;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -15,9 +14,13 @@ import java.util.Optional;
 @RequestMapping("user")
 public class UserController {
 
-  @Autowired private UserNativeQuery userNativeQuery;
-  
-  @GetMapping()
+  private final UserNativeQuery userNativeQuery;
+
+    public UserController(UserNativeQuery userNativeQuery) {
+        this.userNativeQuery = userNativeQuery;
+    }
+
+    @GetMapping()
   public List<UserTO> findUsers() {
     return userNativeQuery.findUsers();
   }

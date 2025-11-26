@@ -15,8 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>12</java.version>
-		<lombok.version>1.18.14</lombok.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<dependencies>
@@ -27,10 +26,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -45,7 +40,7 @@
 		<dependency>
 			<groupId>io.github.gasparbarancelli</groupId>
 			<artifactId>spring-native-query</artifactId>
-			<version>1.0.28</version>
+			<version>1.0.30</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.guava</groupId>
